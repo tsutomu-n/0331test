@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./src/styles/main.css" rel="stylesheet">
+  <link href="./src/styles/output.css" rel="stylesheet">
+  <title>編集画面</title>
+</head>
+<body class="font-poppins bg-amber-50 text-stone-800">
+  <header class="container mx-auto py-5"></header>
+  <nav class="flex justify-end pr-4">
+    <a href="#explanation">
+      <button class="bg-amber-200 hover:bg-amber-300 text-sky-700 border-solid border border-sky-800 font-bold py-1 px-3 rounded-lg shadow">使いかた</button>
+    </a>
+  </nav>
+
+  <main>
+    <section class="container flex justify-center py-10">
+      <div class="flex items-center">
+        <label for="total-savings" class="mr-2 font-bold text-base">合計</label>
+        <input type="number" id="total-savings" placeholder="¥0" class="border border-stone-800 py-2 px-4 text-sky-700 font-bold rounded shadow focus:outline-none focus:border-lime-500 ml-4" readonly>
+      </div>
+    </section>
+    <hr class="border-t border-stone-800">
+
+    <section class="container flex justify-center py-10">
+      <div class="flex items-center">
+        <label for="normal-price" class="mr-2 font-bold text-base">通常価格</label>
+        <input type="number" inputmode="numeric" id="normal-price" placeholder="¥0" class="border border-stone-800 py-2 px-4 text-sky-700 font-bold rounded shadow focus:outline-none focus:border-lime-500 ml-4">
+      </div>
+    </section>
+
+    <section class="container flex justify-center py-10">
+      <div class="flex items-center">
+        <label for="discount-price" class="mr-2 font-bold text-base">割引価格</label>
+        <input type="number" inputmode="numeric" id="discount-price" placeholder="¥0" class="border border-stone-800 py-2 px-4 text-sky-700 font-bold rounded shadow focus:outline-none focus:border-lime-500 ml-4">
+      </div>
+    </section>
+    <hr class="border-t border-stone-800">
+
+    <section id="keypad-modal" class="modal hidden">
+      <div class="grid grid-cols-3 gap-4 p-4">
+        <button class="p-4 border rounded-md text-lg">1</button>
+        <button class="p-4 border rounded-md text-lg">2</button>
+        <button class="p-4 border rounded-md text-lg">3</button>
+        <button class="p-4 border rounded-md text-lg">4</button>
+        <button class="p-4 border rounded-md text-lg">5</button>
+        <button class="p-4 border rounded-md text-lg">6</button>
+        <button class="p-4 border rounded-md text-lg">7</button>
+        <button class="p-4 border rounded-md text-lg">8</button>
+        <button class="p-4 border rounded-md text-lg">9</button>
+        <div class="col-span-2"></div>
+        <button class="p-4 border rounded-md text-lg">0</button>
+        <button class="p-4 border rounded-md text-lg keypad-clear-button">✕</button>
+      </div>
+      <div class="flex justify-center items-center">
+        <button id="ok-button" class="w-3/4 px-6 py-3 font-semibold bg-amber-200 hover:bg-amber-300 text-sky-700 border-solid border border-sky-800 rounded-lg shadow-lg">OK</button>
+      </div>
+    </section>
+
+    <section class="container mx-auto flex justify-end pr-4 py-5">
+      <button class="form-clear-button bg-amber-200 hover:bg-amber-300 text-sky-700 border-solid border border-sky-800 font-bold py-1 px-3 rounded-lg shadow">クリア</button>
+    </section>
+
+    <section class="container mx-auto flex justify-end pr-4 py-10">
+      <a href="#calendar">
+        <button class="bg-amber-200 hover:bg-amber-300 text-sky-700 border-solid border border-sky-800 font-bold py-1 px-3 rounded-lg shadow">カレンダー</button>
+      </a>
+    </section>
+
+    <section>
+      <a href="#tokutoku" id="app" class="flex items-center justify-center py-10">
+        <button class="w-3/4 relative px-6 py-3 font-semibold bg-red-300 hover:bg-red-400 text-sky-700 border-solid border border-sky-800 rounded-lg shadow-lg transform transition duration-300 hover:scale-110 focus:scale-110">
+          <span class="z-10 relative">とくとく！</span>
+          <span class="shimmer absolute inset-0 rounded-lg"></span>
+        </button>
+      </a>
+    </section>
+
+    <section>
+      <a href="#cancel" class="flex items-center justify-center py-5">
+        <button class="w-3/4 px-6 py-3 font-semibold bg-amber-200 hover:bg-amber-300 text-sky-700 border-solid border border-sky-800 rounded-lg shadow-lg">記録</button>
+      </a>
+    </section>
+  </main>
+
+  <script src="/src/main.js"></script>
+</body>
+</html>
