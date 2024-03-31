@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CSS を読み込む -->
+  <link href="./styles/output.css" rel="stylesheet">
+
+  <title>とくとく記録</title>
+
+  <!-- SEO対策のmetaタグ -->
+  <meta name="description" content="商品の通常価格と割引価格を入力して、うんぬん!">
+
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+  <!-- ヘッダー -->
+  <header class="bg-white shadow-md">
+    <div class="max-w-3xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-lg"><a href="#">とくとく記録</a></h1>
+      <button id="hamburger-button" class="text-gray-500 focus:outline-none">
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ナビゲーション -->
+  <nav id="nav-menu" class="bg-white shadow-md hidden">
+    <div class="max-w-3xl mx-auto px-4 py-2">
+      <a href="#explanation"
+        class="block py-2 text-gray-700 hover:text-indigo-500 font-semibold">使い方</a>
+      <a href="#savings" class="block py-2 text-gray-700 hover:text-indigo-500 font-semibold">貯金</a>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-4 py-8">
+
+    <!-- 貯金合計 -->
+    <section id="savings">
+      <h2 class="text-xl font-bold mb-4">とくとく</h2>
+
+      <div class="flex items-center">
+        <label for="total-savings" class="w-32 font-medium text-gray-700">とくとく合計</label>
+        <input id="total-savings" type="number"
+          class="ml-4 px-3 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:border-indigo-500"
+          placeholder="0" readonly>
+      </div>
+    </section>
+
+    <hr class="my-8 border-gray-300">
+
+    <!-- 商品の価格 -->
+    <section id="price">
+      <h2 class="text-xl font-bold mb-4">商品の価格</h2>
+
+      <div class="flex items-center mb-4">
+        <label for="normal-price" class="w-32 font-medium text-gray-700">通常価格</label>
+        <input id="normal-price" type="number" inputmode="numeric"
+          class="ml-4 px-3 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:border-indigo-500"
+          placeholder="0">
+      </div>
+
+      <div class="flex items-center">
+        <label for="discount-price" class="w-32 font-medium text-gray-700">割引価格</label>
+        <input id="discount-price" type="number" inputmode="numeric"
+          class="ml-4 px-3 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:border-indigo-500"
+          placeholder="0">
+      </div>
+
+    </section>
+
+    <!-- クリア -->
+    <section class="container mx-auto flex justify-end pr-4 py-5">
+      <button class="form-clear-button bg-amber-200 hover:bg-amber-300 text-sky-700 border-solid border border-sky-800 font-bold py-1 px-3 rounded-lg shadow">クリア</button>
+    </section>
+
+    <!-- カレンダー -->
+    <section class="container mx-auto flex justify-end pr-4 py-10">
+      <a href="#calendar">
+        <button class="bg-amber-200 hover:bg-amber-300 text-sky-700 border-solid border border-sky-800 font-bold py-1 px-3 rounded-lg shadow">カレンダー</button>
+      </a>
+    </section>
+
+　　<!-- 保存 -->
+    <section>
+      <a href="#tokutoku" id="app" class="flex items-center justify-center py-10">
+        <button class="w-3/4 relative px-6 py-3 font-semibold bg-red-300 hover:bg-red-400 text-sky-700 border-solid border border-sky-800 rounded-lg shadow-lg transform transition duration-300 hover:scale-110 focus:scale-110">
+          <span class="z-10 relative">とくとく！</span>
+          <span class="shimmer absolute inset-0 rounded-lg"></span>
+        </button>
+      </a>
+    </section>
+
+    <!-- 記録 -->
+    <section>
+      <a href="#cancel" class="flex items-center justify-center py-5">
+        <button class="w-3/4 px-6 py-3 font-semibold bg-amber-200 hover:bg-amber-300 text-sky-700 border-solid border border-sky-800 rounded-lg shadow-lg">記録</button>
+      </a>
+    </section>
+  </main>
+
+  <!-- フッター -->
+  <footer class="bg-white shadow-md text-center py-4">
+    <small class="text-gray-500">&copy; 2024 tokutoku App</small>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="./main.js"></script>
+
+  <script>
+    // ハンバーガーメニューの動作
+    const button = document.getElementById('hamburger-button')
+    const menu = document.getElementById('nav-menu')
+
+    button.addEventListener('click', () => {
+      menu.classList.toggle('hidden')
+    })
+  </script>
+
+</body>
+
+</html>
